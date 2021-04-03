@@ -48,3 +48,17 @@ Route::get("/posts/{post}/edit",[PostController::class,"edit"])->name("posts.edi
 Route::put("/posts/{post}/",[PostController::class,"edit"])->name("posts.update");
 Route::delete("/posts/{post}",[PostController::class,"edit"])->name("posts.destroy");
 
+
+Route::get("/test",function (){
+//    if(request("name")){
+//        return request("name");
+//    }else{
+//        return "welcome";
+//    }
+    if(request()&& request()->all() !=[]){
+        return request()->all();
+    }else{
+        return "welcome";
+    }
+
+});
