@@ -68,6 +68,8 @@ class PostController extends Controller
 //   }
         // define type of the method.
     public function store(Request $myRequestObject){
+
+//       dd($myRequestObject);
 //           dd($myRequestObject->all()); // same as request()
 //        $data=$myRequestObject->all();
 ////        dd($data["title"]);
@@ -84,6 +86,8 @@ class PostController extends Controller
 //            "slug"=>$myRequestObject["slug"]
 //        ]);
 //        Post::create($data);
+        // will add the user_id by default,
+        // will take function name
         Post::create($myRequestObject->all());
         return redirect()->route("posts");
     }

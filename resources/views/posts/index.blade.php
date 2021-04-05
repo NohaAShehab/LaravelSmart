@@ -41,7 +41,7 @@
         <tbody>
 
         @foreach($posts as $post)
-{{--            @dd($post->myUserRelation)--}}
+
             <tr>
 {{--                <td>{{$post['id']}}</td>--}}
 {{--                <td>{{$post['title']}}</td>--}}
@@ -51,8 +51,9 @@
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->description}}</td>
-                <td>{{$post->posted_by}}</td>
+                <td>{{$post->user ? $post->user->name :"user not found"}}</td>
                 <td>{{$post->created_at}}</td>
+{{--           @dd($post->myUserRelation, $post->myUserRelation())--}}
                 <td colspan="3">
                     <a href="{{route("posts.show",["post"=>$post->id])}}" class="btn btn-info"> View</a>
                     <a class="btn btn-warning"> Edit</a>
